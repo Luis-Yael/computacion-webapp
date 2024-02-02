@@ -1,0 +1,42 @@
+<section class="login">
+  <div class="wrapper">
+    <div class="section-left">
+      <img src="/assets/images/Buap.png" class="logo-buap">
+      <img src="/assets/images/FCCBuap.png" class="logo-fcc">
+    </div>
+    <div class="section-right">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="title">Inicio de Sesión</h3>
+          <div class="container-inputs">
+            <div class="pt-3 mb-3">
+              <input type="email" [(ngModel)]="username" class="form-control" id="email" placeholder="Correo electrónico">
+              <!-- <div *ngIf="errors.username" class="invalid-feedback">{{ errors.username }}</div> -->
+            </div>
+            <!-- Contraseña -->
+            <div class="pt-3 mb-3">
+              <div class="input-group input-group-merge">
+                <input type="{{type}}" [(ngModel)]="password" id="password" name="password_user" class="form-control pwd" placeholder="Contraseña" (keyup.enter)="login()">
+                <div class="input-group-text" id="show-password" data-password="false">
+                    <i *ngIf="type == 'password'" class="bi bi-eye-fill" (click)="showPassword()"></i>
+                    <i *ngIf="type == 'text'" class="bi bi-eye-slash-fill" (click)="showPassword()"></i>
+                </div>
+              </div>
+              <!-- <div *ngIf="errors.password" class="invalid-feedback">{{ errors.password }}</div> -->
+            </div>
+
+            <div class="mb-3">
+              <label class="form-check-label" for="checkbox-signin">Olvidé mi contraseña</label>
+            </div>
+
+            <div class="d-flex flex-column align-items-center mb-3 w-100" style="text-align: center;">
+              <button class="btn btn-primary" type="submit" (click)="login()">Iniciar sesión</button>
+              <label class="form-check-label pt-3" for="checkbox-signin" (click)="registrar()">Registrarse</label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
