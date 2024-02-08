@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <!-- Va a englobar todo el formulario con la cabecera -->
+  <div class="section-registro">
+    <div class="body-registro">
+      <div class="row mt-3 mb-3">
+        <div class="form-group col-12">
+          <label class="title-user" for="tipo_usuario">Ingresa los datos del administrador</label>
+        </div>
+      </div>
+      <!-- Campos del formulario -->
+      <mat-form-field class="mat-input" appearance="outline">
+        <mat-label>ID de administrador</mat-label>
+        <input matInput [(ngModel)]="admin.clave_admin" name="id" placeholder="Escribe clave de administrador">
+      </mat-form-field>
+      <!-- <div *ngIf="errors.clave_admin" class="invalid-feedback">{{ errors.clave_admin }}</div> -->
+
+      <mat-form-field class="mat-input" appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput [(ngModel)]="admin.first_name" placeholder="Escribe nombre">
+      </mat-form-field>
+      <!-- <div *ngIf="errors.first_name" class="invalid-feedback">{{ errors.first_name }}</div> -->
+
+      <mat-form-field class="mat-input" appearance="outline">
+        <mat-label>Apellidos</mat-label>
+        <input matInput [(ngModel)]="admin.last_name" placeholder="Escribe apellidos">
+      </mat-form-field>
+      <!-- <div *ngIf="errors.last_name" class="invalid-feedback">{{ errors.last_name }}</div> -->
+    </div>
+  </div>
+</div>

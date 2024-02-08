@@ -1,0 +1,82 @@
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section-registro{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-registro{
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.body-registro{
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.img-slider{
+  width: 900px;
+  height: 630px;
+}
+
+//Radio buttons
+.title-user{
+  font-size: 28px;
+  text-align: center;
+  font-family: Nexa-Bold;
+  letter-spacing: 2px;
+  color: #231F20;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.container{
+  width: 50vw;
+}
+
+::ng-deep .mat-mdc-radio-button .mdc-form-field {
+  color: #231F20;
+  font-family: Nexa;
+  font-size: 20px;
+}
+
+//Cambia el color del radio focus
+::ng-deep .mat-mdc-radio-button.mat-accent {
+  --mdc-radio-selected-focus-icon-color: #0092B8;
+  --mdc-radio-selected-hover-icon-color: #0092B8;
+  --mdc-radio-selected-icon-color: #0092B8;
+  --mdc-radio-selected-pressed-icon-color: #0092B8;
+  --mat-radio-ripple-color: #000;
+  --mat-radio-checked-ripple-color: #0092B8;
+}
+
+::ng-deep .mdc-radio {
+  display: inline-block;
+  position: relative;
+  flex: 0 0 auto;
+  box-sizing: content-box;
+  width: 20px;
+  height: 28px!important;
+  cursor: pointer;
+  will-change: opacity,transform,border-color,color;
+}

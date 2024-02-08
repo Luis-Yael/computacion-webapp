@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Cuando la página se hace muy pequeña, aparece el botón. -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ng-container *ngIf="tipo!='registro-usuarios'; else registraUsers">
+            <!-- TODO: Menú para los usuarios -->
+          </ng-container>
+          <ng-template #registraUsers>
+            <label class="navbar-brand" href="#">Registro de usuarios del sistema</label>
+          </ng-template>
+        </ul>
+        <form class="d-flex">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle"></i>
+            </button>
+          </div>
+          <ul class="dropdown-menu">
+            <li *ngIf="token != ''"><a class="dropdown-item" (click)="logout()">Cerrar Sesión</a></li>
+            <li *ngIf="tipo=='registro-usuarios' && token == ''"><a class="dropdown-item" href="#">Iniciar Sesión</a></li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
