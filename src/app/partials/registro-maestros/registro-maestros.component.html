@@ -1,1 +1,37 @@
-<p>registro-maestros works!</p>
+<div class="wrapper">
+  <!-- Va a englobar todo el formulario con la cabecera -->
+  <div class="section-registro">
+      <div class="body-registro">
+        <div class="row mt-3 mb-3">
+          <div class="form-group col-12">
+            <label class="title-user" for="tipo_usuario">Ingresa los datos del maestro</label>
+          </div>
+        </div>
+        <mat-form-field class="mat-input" appearance="outline">
+            <mat-label>ID de trabajador</mat-label>
+            <input matInput [(ngModel)]="maestro.id_trabajador" name="id" placeholder="Escribe ID de trabajador">
+        </mat-form-field>
+        <div *ngIf="errors.id_trabajador" class="invalid-feedback">{{ errors.id_trabajador }}</div>
+        <!-- TODO:Agregar todos los input faltantes -->
+
+        <div class="select-materias">
+          <div class="row mt-3 mb-3">
+            <div class="form-group col-12">
+              <label class="title-materias" for="tipo_usuario">Selecciona las materias a impartir</label>
+            </div>
+          </div>
+          <div class="checkbox-group" *ngFor="let materia of materias; let i = index">
+            <mat-checkbox class="checkbox-item opc-sc" name="opsc" (change)="checkboxChange($event)" value="{{materia.nombre}}">
+                <div class="d-checkbox-nombre">{{materia.nombre}}</div>
+            </mat-checkbox>
+          </div>
+        </div>
+
+        <div class="section-buttons">
+            <button class="btn btn-danger" (click)="regresar()">Cancelar</button>
+            <button *ngIf="!editar" class="btn btn-primary" type="submit" (click)="registrar()">Registrar</button>
+            <button *ngIf="editar" class="btn btn-primary" type="submit" (click)="actualizar()">Actualizar</button>
+        </div>
+      </div>
+  </div>
+</div>

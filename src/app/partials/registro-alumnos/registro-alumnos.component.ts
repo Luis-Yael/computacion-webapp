@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-registro-alumnos',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./registro-alumnos.component.scss']
 })
 export class RegistroAlumnosComponent {
-
+  @Input() rol:string = "";
 }
