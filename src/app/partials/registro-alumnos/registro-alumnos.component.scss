@@ -1,0 +1,122 @@
+.wrapper{
+  height: 100%;
+  width: 100%;
+  //Flex
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+}
+
+.section-registro{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.body-registro{
+  width: 50vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  gap: 1.5rem;
+}
+
+.title-user{
+  font-size: 28px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  letter-spacing: 2px;
+  color: #231F20;
+  text-transform: capitalize;
+  opacity: 1;
+}
+.section-buttons{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+.btn-primary {
+  width: 208px;
+  height: 48px;
+  background-color: #0092B8!important;
+  border-color: #0092B8!important;
+  border-radius: 8px!important;
+  opacity: 1;
+  //Fuente
+  text-align: center;
+  font-family: Nexa-Bold;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.btn-primary:hover {
+  background-color: #017895!important;
+  border-color: #017895!important;
+
+}
+
+.btn-danger{
+  width: 208px;
+  height: 48px;
+  border-radius: 8px!important;
+  opacity: 1;
+  //Fuente
+  text-align: center;
+  font-family: Nexa-Bold;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+
+mat-form-field{
+  width: 100%!important;
+  height: 48px!important;
+  text-align: left!important;
+}
+
+//Estilos mat-input
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  text-align: left;
+  font-family: Nexa!important;
+  font-size: 13px;
+  letter-spacing: 0px;
+  color: #E84150 !important;
+  opacity: 1;
+}
+::ng-deep .mat-input-element{
+  text-align: left;
+  font-family: Nexa;
+  font-size: 16px;
+  letter-spacing: 0px;
+  opacity: 0.6;
+  color: #000000 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+//Cambiar focused de mat-input
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #000000!important;
+}

@@ -11,7 +11,7 @@
           <div class="container-inputs">
             <div class="pt-3 mb-3">
               <input type="email" [(ngModel)]="username" class="form-control" id="email" placeholder="Correo electrónico">
-              <!-- <div *ngIf="errors.username" class="invalid-feedback">{{ errors.username }}</div> -->
+              <div *ngIf="errors.username" class="invalid-feedback">{{ errors.username }}</div>
             </div>
             <!-- Contraseña -->
             <div class="pt-3 mb-3">
@@ -22,7 +22,7 @@
                     <i *ngIf="type == 'text'" class="bi bi-eye-slash-fill" (click)="showPassword()"></i>
                 </div>
               </div>
-              <!-- <div *ngIf="errors.password" class="invalid-feedback">{{ errors.password }}</div> -->
+              <div *ngIf="errors.password" class="invalid-feedback">{{ errors.password }}</div>
             </div>
 
             <div class="mb-3">

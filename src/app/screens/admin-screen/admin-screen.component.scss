@@ -1,0 +1,20 @@
+.wrapper{
+  width: 100vw;
+  height: 90vh;
+}
+
+.header-home{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.body-admin{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}

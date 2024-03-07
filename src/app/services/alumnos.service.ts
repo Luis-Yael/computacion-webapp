@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ValidatorService } from './tools/validator.service';
 import { ErrorsService } from './tools/errors.service';
-import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,37 +12,39 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class AdministradorService {
+export class AlumnosService {
 
   constructor(
     private http: HttpClient,
     private validatorService: ValidatorService,
-    private errorService: ErrorsService,
+    private errorService: ErrorsService
   ) { }
 
-  public esquemaAdmin(){
+  public esquemaAlumno(){
     return {
       'rol':'',
-      'clave_admin': '',
+      'matricula': '',
       'first_name': '',
       'last_name': '',
       'email': '',
       'password': '',
       'confirmar_password': '',
-      'telefono': '',
+      'fecha_nacimiento': '',
+      'curp': '',
       'rfc': '',
       'edad': '',
-      'ocupacion': ''
+      'telefono': '',
+      'ocupacion': '',
     }
   }
 
   //Validación para el formulario
-  public validarAdmin(data: any, editar: boolean){
-    console.log("Validando admin... ", data);
+  public validarAlumno(data: any, editar: boolean){
+    console.log("Validando alumno... ", data);
     let error: any = [];
 
-    if(!this.validatorService.required(data["clave_admin"])){
-      error["clave_admin"] = this.errorService.required;
+    if(!this.validatorService.required(data["matricula"])){
+      error["matricula"] = this.errorService.required;
     }
 
     if(!this.validatorService.required(data["first_name"])){
@@ -71,6 +73,20 @@ export class AdministradorService {
       }
     }
 
+    if(!this.validatorService.required(data["fecha_nacimiento"])){
+      error["fecha_nacimiento"] = this.errorService.required;
+    }
+
+    if(!this.validatorService.required(data["curp"])){
+      error["curp"] = this.errorService.required;
+    }else if(!this.validatorService.min(data["curp"], 18)){
+      error["curp"] = this.errorService.min(18);
+      alert("La longitud de caracteres de la CURP es menor, deben ser 18");
+    }else if(!this.validatorService.max(data["curp"], 18)){
+      error["curp"] = this.errorService.max(18);
+      alert("La longitud de caracteres de la CURP es mayor, deben ser 18");
+    }
+
     if(!this.validatorService.required(data["rfc"])){
       error["rfc"] = this.errorService.required;
     }else if(!this.validatorService.min(data["rfc"], 12)){
@@ -97,12 +113,6 @@ export class AdministradorService {
 
     //Return arreglo
     return error;
-  }
-
-  //Aquí van los servicios HTTP
-  //Servicio para registrar un nuevo usuario
-  public registrarAdmin (data: any): Observable <any>{
-    return this.http.post<any>(`${environment.url_api}/admin/`,data, httpOptions);
   }
 
 }
