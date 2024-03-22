@@ -1,0 +1,104 @@
+.wrapper{
+  width: 100vw;
+  height: 90vh;
+}
+
+.header-home{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.body-alumnos{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.container{
+  max-width: 90vw;
+}
+.title-perfil{
+  margin-left: 3rem;
+  font-size: 32px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  letter-spacing: 0px;
+  color: #231F20;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.title-table{
+  margin-left: 3rem;
+  font-size: 28px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  letter-spacing: 0px;
+  color: #231F20;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+//Estilos de la tabla
+table {
+    width: 100%;
+    padding-bottom: 1.5rem;
+}
+
+// .mat-elevation-z8{
+//     width: 100%;
+// }
+::ng-deep .mat-mdc-table{
+  table-layout: fixed!important;
+}
+.mat-mdc-header-cell {
+  border-bottom-color: #231F20;
+  font-family: Nexa-Bold!important;
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #231F20;
+  opacity: 1;
+}
+
+.mat-mdc-cell {
+    text-align: left;
+    font-family: Nexa!important;
+    font-size: 15px!important;
+    letter-spacing: 0px!important;
+    color: #231F20!important;
+    opacity: 1!important;
+}
+
+//Editar
+.td-editar{
+    color: #0092B8!important;
+    cursor: pointer!important;
+    font-size: 20px!important;
+    text-align: center;
+}
+
+.td-editar:hover{
+    color: #006179!important;
+    font-size: 25px!important;
+    text-align: center;
+}
+
+//Eliminar
+.td-eliminar{
+    color: #E84150!important;
+    cursor: pointer!important;
+    font-size: 20px!important;
+    text-align: center;
+}
+
+.td-eliminar:hover{
+    color: #ce1626!important;
+    font-size: 25px!important;
+    text-align: center;
+}

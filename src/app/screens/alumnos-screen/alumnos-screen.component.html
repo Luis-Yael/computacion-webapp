@@ -1,1 +1,97 @@
-<p>alumnos-screen works!</p>
+<div class="wrapper">
+  <div class="header-home">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="body-alumnos">
+    <div class="row mt-5 mb-5">
+      <div class="col-12">
+        <span class="title-perfil">Bienvenido {{name_user}}</span>
+        <br><br>
+        <span class="title-perfil">{{rol}}</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row mt-3 mb-5" style="text-align: center;">
+        <div class="col-12">
+          <div class="alert alert-primary" role="alert">
+            <span class="title-table">Lista de alumnos registrados</span>
+          </div>
+        </div>
+      </div>
+      <!-- Tabla de angular material -->
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+            <!-- 1era fila -->
+            <ng-container matColumnDef="matricula">
+                <th mat-header-cell *matHeaderCellDef> Matrícula </th>
+                <td mat-cell *matCellDef="let element"> {{element.matricula}} </td>
+            </ng-container>
+
+            <!-- 2da fila -->
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.first_name}} {{element.last_name}} </td>
+            </ng-container>
+
+            <!-- 3era fila -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Correo electrónico </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="fecha_nacimiento">
+                <th mat-header-cell *matHeaderCellDef> Fecha nacimiento </th>
+                <td mat-cell *matCellDef="let element"> {{element.fecha_nacimiento | date: 'dd/MM/yyyy':'UTC'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="edad">
+                <th mat-header-cell *matHeaderCellDef> Edad </th>
+                <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="curp">
+                <th mat-header-cell *matHeaderCellDef> CURP </th>
+                <td mat-cell *matCellDef="let element"> {{element.curp}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="rfc">
+                <th mat-header-cell *matHeaderCellDef> RFC </th>
+                <td mat-cell *matCellDef="let element"> {{element.rfc}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="telefono">
+                <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+                <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ocupacion">
+                <th mat-header-cell *matHeaderCellDef> Ocupación </th>
+                <td mat-cell *matCellDef="let element"> {{element.ocupacion}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="editar">
+                <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+                <td mat-cell *matCellDef="let element" class="td-editar">
+                    <i class="bi bi-pencil-square" (click)="goEditar(element.id)"></i>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="eliminar">
+                <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                <td mat-cell *matCellDef="let element" class="td-eliminar">
+                    <i class="bi bi-trash3-fill" (click)="delete(element.id)"></i>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

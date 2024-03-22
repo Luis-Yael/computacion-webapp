@@ -3,6 +3,46 @@
     <app-navbar></app-navbar>
   </div>
   <div class="body-admin">
-
+    <div class="row mt-5 mb-5">
+      <div class="col-12">
+        <span class="title-perfil">Bienvenido {{name_user}}</span>
+        <br><br>
+        <span class="title-perfil">Administrador</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row mt-3 mb-5" style="text-align: center;">
+        <div class="col-12">
+          <div class="alert alert-primary" role="alert">
+            <span class="title-table">Lista de administradores registrados</span>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Clave Admin</th>
+            <th scope="col">Nombre Completo</th>
+            <th scope="col">Email</th>
+            <th scope="col">RFC</th>
+            <th scope="col">Ocupación</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let admin of lista_admins; let i=index">
+            <td>{{admin.clave_admin}}</td>
+            <td>{{admin.user.first_name}} {{admin.user.last_name}}</td>
+            <td>{{admin.user.email}}</td>
+            <td>{{admin.rfc}}</td>
+            <td>{{admin.ocupacion}}</td>
+            <td class="td-editar"><i class="bi bi-pencil-square" (click)="goEditar(admin.id)"></i></td>
+            <td class="td-eliminar"><i class="bi bi-trash3-fill" (click)="delete(admin.id)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+

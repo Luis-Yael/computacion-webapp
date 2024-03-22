@@ -18,3 +18,86 @@
   align-items: flex-start;
   width: 100%;
 }
+
+.container{
+  max-width: 90vw;
+}
+
+.title-perfil{
+  margin-left: 3rem;
+  font-size: 32px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  letter-spacing: 0px;
+  color: #231F20;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.title-table{
+  margin-left: 3rem;
+  font-size: 28px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  letter-spacing: 0px;
+  color: #231F20;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+thead{
+  border-bottom: #231F20;
+}
+tr td{
+  height: 3rem;
+}
+
+th{
+  font-family: Nexa-Bold!important;
+  font-size: 18px;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #231F20;
+  opacity: 1;
+}
+td{
+  text-align: left;
+  font-family: Nexa!important;
+  font-size: 15px!important;
+  letter-spacing: 0px!important;
+  color: #231F20!important;
+  opacity: 1!important;
+  padding-top: 18px;
+}
+
+//Editar
+.td-editar{
+  color: #0092B8!important;
+  cursor: pointer!important;
+  font-size: 20px!important;
+  padding-left: 1.5rem;
+  //text-align: center;
+}
+
+.td-editar:hover{
+  color: #006179!important;
+  font-size: 25px!important;
+  padding-left: 1.5rem;
+  //text-align: center;
+}
+
+//Eliminar
+.td-eliminar{
+  color: #E84150!important;
+  cursor: pointer!important;
+  font-size: 20px!important;
+  padding-left: 1.5rem;
+  //text-align: center;
+}
+
+.td-eliminar:hover{
+  color: #ce1626!important;
+  font-size: 25px!important;
+  padding-left: 1.5rem;
+  //text-align: center;
+}
